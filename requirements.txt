@@ -5,3 +5,5 @@ pathvalidate==2.*
 python-dotenv>=0.10
 psutil>=5.6.0
 selenium==3.*
+# Addded as suggested by https://stackoverflow.com/questions/76180798/jenkins-job-failing-for-urllib3-valueerror-timeout-value-connect-was-object-o
+urllib3>=1.26.15,<2
