@@ -183,7 +183,7 @@ def _download_rr_archive(browser: Browser,
 
     logger.debug("Wait for interface to load")
     dot_button = None
-    for _ in range(100):
+    for _ in range(500):
         # Starting is a little bit slow, so we wait for the button that signal it's ok
         time.sleep(config.sleep_duration)
         try:
@@ -203,6 +203,9 @@ def _download_rr_archive(browser: Browser,
                 "You seems to have multiple databases. Please select it with the option "
                 "--database")
             sys.exit(1)
+
+        logger.debug(f"Iteration {iteration + 1}: dot_button {'found' if dot_button is not None else 'not found'}")
+
 
     assert dot_button is not None, "All roads leads to Roam, but that one is too long. Try " \
                                    "again when Roam servers are faster."
